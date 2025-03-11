@@ -13,13 +13,13 @@ struct ViewConstants {
         static let defaultSpacing: CGFloat = 6
         static let cornerRadius: CGFloat = 5
         static let titleTopPadding: CGFloat = 2
+        static let lineLimit = 2
     }
     
     struct DetailView {
         static let defaultPadding: CGFloat = 16
         static let defaultSpacing: CGFloat = 8
         static let cornerRadius: CGFloat = 5
-        static let imagePlaceholderWidth: CGFloat = 300
-        static let imagePlaceholderHeight: CGFloat = 200
+        static let imagePlaceholderHeight: CGFloat = 250
     }
 }

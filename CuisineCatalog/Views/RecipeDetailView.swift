@@ -31,10 +31,10 @@ struct RecipeDetailView: View {
                     .resizable()
                     .scaledToFit()
             } placeholder: {
-                Image(systemName: "photo")
-                    .resizable()
-                    .scaledToFit()
-                    .padding(.horizontal, Constants.defaultPadding)
+                ProgressView()
+                    .scaledToFill()
+                    .padding(Constants.defaultPadding)
+                    .frame(height: Constants.imagePlaceholderHeight)
             }
             .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
             

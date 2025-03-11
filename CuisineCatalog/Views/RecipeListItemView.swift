@@ -31,7 +31,7 @@ struct RecipeListItemView: View {
                     Text(recipe.name)
                         .foregroundStyle(.primaryText)
                         .font(.headline)
-                        .lineLimit(2)
+                        .lineLimit(Constants.lineLimit)
                         .fixedSize(horizontal: false, vertical: true)
                     
                     Spacer()

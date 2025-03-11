@@ -58,11 +58,6 @@
 			path = CuisineCatalogTests;
 			sourceTree = "<group>";
 		};
-		02F144EC2D7A3E8000E93DEC /* CuisineCatalogUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CuisineCatalogUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +91,6 @@
 				0200FCAA2D7F607900A3941E /* Readme.md */,
 				02F144D12D7A3E7E00E93DEC /* CuisineCatalog */,
 				02F144E22D7A3E8000E93DEC /* CuisineCatalogTests */,
-				02F144EC2D7A3E8000E93DEC /* CuisineCatalogUITests */,
 				02F144D02D7A3E7E00E93DEC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -171,9 +165,6 @@
 			);
 			dependencies = (
 				02F144EB2D7A3E8000E93DEC /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				02F144EC2D7A3E8000E93DEC /* CuisineCatalogUITests */,
 			);
 			name = CuisineCatalogUITests;
 			packageProductDependencies = (
@@ -415,7 +406,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CuisineCatalog/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = BZG483J7UL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -448,7 +439,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CuisineCatalog/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = BZG483J7UL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

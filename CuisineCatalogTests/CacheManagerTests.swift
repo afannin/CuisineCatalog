@@ -21,7 +21,8 @@ final class CacheManagerTests: XCTestCase {
 
         let testURL = URL(string: imagePath)!
 
-        guard let image = UIImage(contentsOfFile: imagePath) else {
+        guard let image = UIImage(contentsOfFile: imagePath),
+            let cacheManager else {
             XCTFail("Could not create image from path \(imagePath)")
             return
         }

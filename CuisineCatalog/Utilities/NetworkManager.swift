@@ -28,7 +28,7 @@ final class NetworkManager: NetworkClient {
         }
         
         if let responseCode = result as? HTTPURLResponse,
-            !(200...299).contains(responseCode.statusCode) {
+           !NetworkConstants.successCodeRange.contains(responseCode.statusCode) {
             throw NetworkError.responseError
         }
         

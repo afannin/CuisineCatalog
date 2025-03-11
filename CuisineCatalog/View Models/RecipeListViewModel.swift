@@ -14,11 +14,11 @@ enum SortingOption: String, CaseIterable {
 
 @Observable
 final class RecipeListViewModel {
-    var recipes: [Recipe]?
+    private(set) var recipes: [Recipe]?
     var isLoading = false
     var searchResults: [Recipe] = []
     
-    private var networkManager: NetworkManager
+    private var networkManager: NetworkClient
     
     var hasRecipes: Bool {
         guard let recipes else {
@@ -28,7 +28,7 @@ final class RecipeListViewModel {
         return !recipes.isEmpty
     }
     
-    init(networkManager: NetworkManager) {
+    init(networkManager: NetworkClient) {
         self.networkManager = networkManager
     }
     
@@ -41,6 +41,8 @@ final class RecipeListViewModel {
                 recipes = fetchedRecipes["recipes"]
             }
         } catch {
+            recipes = nil
+            
             switch error {
             case NetworkError.decodingError:
                 print("Decoding error: \(error)")

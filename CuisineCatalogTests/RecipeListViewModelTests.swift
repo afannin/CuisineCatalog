@@ -9,16 +9,18 @@ import XCTest
 @testable import CuisineCatalog
 
 final class RecipeListViewModelTests: XCTestCase {
-    
-    private var recipes: [Recipe]?
-    let viewModel = RecipeListViewModel(networkManager: NetworkManager())
+    private var networkMock = NetworkMock()
+    private var viewModel: RecipeListViewModel!
     
     override func setUp() async throws {
         try await super.setUp()
-        viewModel.recipes = try await fetchJSON()
+
+        viewModel = RecipeListViewModel(networkManager: networkMock)
+        networkMock.mockData = try await fetchJSON()
+        try await viewModel.fetchRecipes()
     }
     
-    private func fetchJSON() async throws -> [Recipe]? {
+    private func fetchJSON() async throws -> Data? {
         let bundle = Bundle(for: type(of: self))
         guard let path = bundle.path(forResource: "recipes", ofType: "json") else {
             XCTFail("Invalid path to JSON")
@@ -27,11 +29,7 @@ final class RecipeListViewModelTests: XCTestCase {
         
         do {
             let data = try Data(contentsOf: URL(filePath: path))
-            let recipes = try JSONDecoder().decode([String: [Recipe]].self, from: data)
-            
-            XCTAssertNotNil(recipes)
-            
-            return recipes["recipes"]
+            return data
         } catch {
             XCTFail("Could not parse JSON")
             

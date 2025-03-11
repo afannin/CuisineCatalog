@@ -16,10 +16,6 @@ struct Recipe: Decodable, Identifiable {
     let sourceUrl: URL?
     let youtubeUrl: URL?
     
-    enum ContainerKeys: String, CodingKey {
-        case recipes
-    }
-    
     enum CodingKeys: String, CodingKey {
         case cuisine
         case name

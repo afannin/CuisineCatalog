@@ -45,6 +45,15 @@ struct RecipeListView: View {
                 }
             }
         }
+        .refreshable {
+            Task {
+                do {
+                    try await viewModel.fetchRecipes()
+                } catch {
+                    print("Failed to fetch recipes: \(error)")
+                }
+            }
+        }
         .overlay {
             if isSearching && viewModel.searchResults.isEmpty {
                 ContentUnavailableView.search

@@ -9,7 +9,7 @@ import XCTest
 @testable import CuisineCatalog
 
 final class NetworkManagerTests: XCTestCase {
-    var networkMock = NetworkMock()
+    private var networkMock = NetworkMock()
     
     private func fetchJSON() async throws -> Data? {
         let bundle = Bundle(for: type(of: self))
